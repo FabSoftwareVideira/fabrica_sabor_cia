@@ -36,7 +36,7 @@ nav {
 
 
 nav .logo img{
-    width: 10%;
+    width: 60px;
     display: flexbox;
 }
 
@@ -60,9 +60,22 @@ nav ul li a {
     padding-right: 14px;
 }
 
-.hover-nav:hover {
+.hover-nav {
     position: relative;
-}
-.hover-nav:hover::before {
+    }
     
+.hover-nav::before {
+    content: '' ;
+    position: absolute;
+    bottom: 0   ;
+    left: 50%;
+    transition: transform 0.1s ease-in-out;
+    transform: translateX(-50%) scale(0);
+    height: 1px;
+    width: 100%;
+    background-color: rgb(255, 255, 255) ;
+}
+
+.hover-nav:hover::before{
+    transform: translateX(-50%) scale(1);
 }
