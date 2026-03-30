@@ -11,7 +11,8 @@ body{
     color: #333;
     line-height: 1.6;
     padding-top: 80px;
-    background-color: rgb(255, 255, 255);
+    background: linear-gradient(135deg, #90c672 0%, #f9f9f9 100%);
+    background-attachment: fixed;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -21,15 +22,12 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background: linear-gradient(135deg, #005004, #1e4229);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: linear-gradient(135deg, #2c7f61, #90c672);
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 16px 32px;
     z-index: 10;
-    height: 80px;
+    height: 10%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 
 }
@@ -37,13 +35,14 @@ nav {
 
 nav .logo img{
     width: 60px;
-    display: flexbox;
+    display: flex;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 32px;
+    gap: 40px;
+
 }
 
 
@@ -51,19 +50,15 @@ nav ul li a {
     color: rgb(255, 255, 255);
     text-decoration: none;
     font-weight: 500;
-    transition: border-color 0.2s ease;
-    background-color: transparent;
-    border-radius: 50px;
-    border: 2px solid transparent;
-    padding: 5px;
-    padding-left: 14px;
-    padding-right: 14px;
 }
+
+
+/* efeitos no hover da nav */
 
 .hover-nav {
     position: relative;
     }
-    
+
 .hover-nav::before {
     content: '' ;
     position: absolute;
@@ -78,4 +73,52 @@ nav ul li a {
 
 .hover-nav:hover::before{
     transform: translateX(-50%) scale(1);
+}
+
+#container{
+    padding-top: 10px;
+    display: flexbox;   
+    padding-bottom: 4%;
+}
+ 
+
+.cont h1 {
+    font-size: 2.5em;   
+}
+
+.cont a {
+    display: inline-block;
+    padding: 1% ;
+    margin-top: 2%;
+    background-color: #2c7f61;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.cont{
+    background-color: #90c672;
+    border-radius: 10px;
+    padding: 3%;
+    margin: 5%;
+    border: 2px solid #d0ecc0;
+    width: 50%;
+    height: 80vh; /* Ocupa 80% da altura da tela do celular */
+}
+
+.secao-cardapio {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 2px solid #90c672;
+    border-radius: 12px;
+    overflow: hidden; /* Garante que o PDF não saia das bordas arredondadas */
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
 }
