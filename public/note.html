@@ -23,78 +23,7 @@
     </nav>
     
  
-    <main id="container">
  
-        <!-- Hero -->
-        <section class="hero">
-            <div class="hero-text">
-                <span class="badge">🌿 IFC Videira</span>
-                <h1>Bem-vindo(a) ao<br><span class="destaque">Sabor & Cia!</span></h1>
-                <p>Um espaço pensado para transformar cada refeição em uma experiência especial. Confira nosso cardápio mensal e venha nos visitar!</p>
-                <a href="#cardapio" class="btn-principal">Ver cardápio do mês ↓</a>
-            </div>
-            <div class="hero-deco">
-                <div class="circulo c1"></div>
-                <div class="circulo c2"></div>
-                <div class="emoji-float">🍽️</div>
-            </div>
-        </section>
- 
-        <!-- Info rápida -->
-        <section class="info-rapida">
-            <div class="info-card">
-                <span class="info-icon">🕐</span>
-                <div>
-                    <strong>Horário</strong>
-                    <p>Seg–Sex, 07h–13h30</p>
-                </div>
-            </div>
-            <div class="info-card">
-                <span class="info-icon">📍</span>
-                <div>
-                    <strong>Localização</strong>
-                    <p>Bloco principal, térreo</p>
-                </div>
-            </div>
-            <div class="info-card">
-                <span class="info-icon">📅</span>
-                <div>
-                    <strong>Cardápio</strong>
-                    <p>Atualizado todo mês</p>
-                </div>
-            </div>
-        </section>
- 
-        <!-- Cardápio PDF -->
-        <section class="secao-cardapio" id="cardapio">
-            <div class="cardapio-header">
-                <h2>Cardápio do Mês</h2>
-                <span class="mes-badge" id="mes-atual"></span>
-            </div>
-            <div class="pdf-wrapper">
-                <iframe id="pdf-cardapio" src="/cardapio" title="Cardápio em PDF">
-                    <p>Seu navegador não suporta visualização de PDFs.
-                        <a href="/cardapio" target="_blank" class="btn-principal">Abrir cardápio</a>
-                    </p>
-                </iframe>
-            </div>
-            <a href="/cardapio" target="_blank" class="btn-secundario">⬇ Baixar PDF</a>
-        </section>
- 
-    </main>
- 
-    <footer>
-        <p>© 2025 Sabor & Cia · IFC Videira</p>
-        <a href="https://instagram.com" target="_blank" class="insta-link">📸 Instagram</a>
-    </footer>
- 
-    <script>
-        const meses = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho',
-                       'Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
-        const agora = new Date();
-        document.getElementById('mes-atual').textContent = 
-            `${meses[agora.getMonth()]} ${agora.getFullYear()}`;
-    </script>
  
 </body>
 </html>
@@ -102,75 +31,6 @@
 
 ---------
 
-
-body {
-    background-color: var(--creme);
-    color: var(--texto);
-    font-family: var(--font-body);
-    line-height: 1.6;
-    padding-top: 70px;
-    min-height: 100vh;
-}
- 
-/* =====================
-   NAVBAR
-======================== */
-#navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: linear-gradient(135deg, var(--verde-escuro), var(--verde-medio));
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    height: 70px;
-    z-index: 100;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.2);
-}
- 
-.logo img {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-    border-radius: 50%;
-    background: white;
-    padding: 2px;
-}
- 
-#menu {
-    list-style: none;
-    display: flex;
-    gap: 24px;
-}
- 
-#menu li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
-    position: relative;
-    padding-bottom: 2px;
-}
- 
-.hover-nav::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 1.5px;
-    background: white;
-    transition: width 0.25s ease;
-}
- 
-.hover-nav:hover::after {
-    width: 100%;
-}
- 
-/* =====================
-   HERO
-======================== */
 .hero {
     position: relative;
     padding: 48px 24px 40px;
@@ -226,42 +86,8 @@ body {
     z-index: 1;
 }
  
-.circulo {
-    position: absolute;
-    border-radius: 50%;
-    opacity: 0.15;
-}
- 
-.c1 {
-    width: 180px;
-    height: 180px;
-    background: var(--verde-claro);
-    top: -40px;
-    right: -40px;
-}
- 
-.c2 {
-    width: 100px;
-    height: 100px;
-    background: var(--verde-escuro);
-    bottom: 20px;
-    right: 60px;
-}
- 
-.emoji-float {
-    position: absolute;
-    font-size: 4rem;
-    top: 50%;
-    right: 30px;
-    transform: translateY(-50%);
-    opacity: 0.6;
-    animation: flutuar 3s ease-in-out infinite;
-}
- 
-@keyframes flutuar {
-    0%, 100% { transform: translateY(-50%) }
-    50% { transform: translateY(calc(-50% - 10px)) }
-}
+
+
  
 /* =====================
    BOTÕES
