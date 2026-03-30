@@ -5,6 +5,19 @@ const port = 3000;
 
 // definir uma página public para as páginas estáticas
 app.use(express.static('public'));
+
+
+app.get('/cardapio', (requisicao, resposta) => {
+
+    const agora = new Date();
+    const ano = agora.getFullYear();
+    const numeroMes = agora.getMonth() + 1; 
+    const nomeArquivo = `/uploads/cardapio-${ano}${numeroMes}.pdf`;
+    
+    resposta.sendFile(__dirname + nomeArquivo);
+});
+
+
 ''
 app.get('/', (requisicao, resposta) => {
     resposta.sendFile(__dirname + '/index.html');
@@ -23,16 +36,6 @@ app.get('/sofia', (requisicao, resposta) => {
     resposta.send('Olá, Sofia!');
 })
 
-app.get('/cardapio', (requisicao, resposta) => {
-    // const google_drive_url = 'https://drive.google.com/drive/folders/12tEEDOWApdB6E7jscCncuCHvQ7jPSUrr?usp=drive_link';
-    // baixar o arquivo do Google Drive, sem redirect
-    resposta.sendFile(__dirname + '/uploads/cardapioteste.pdf');
-
-
-    
-
-
-});
 
 
 app.use((req, res) => {
