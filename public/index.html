@@ -1,23 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/img/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <title>Sabor & Cia</title>
+
 </head>
 <body>
 
-     <nav id="navbar">
-    <div class="logo"> <a href="index.html"> <img src="assets/img/logo.png" alt=""> </a> </div>
-    <ul id="menu">
-        <li><a href="sobre.html" class="hover-nav" >Sobre Nós</a></li>
-        <li><a href="contato.html" class="hover-nav" >Contato</a></li>
-    </ul>
+    <nav id="navbar">
+        <div class="logo"> <a href="index.html"> <img src="assets/img/logo.png" alt=""> </a> </div>
+        <ul id="menu">
+            <li><a href="sobre.html" class="hover-nav">Sobre Nós</a></li>
+            <li><a href="contato.html" class="hover-nav">Contato</a></li>
+        </ul>
     </nav>
 
-    <h1>Olá, Mundo!</h1>
-    <a href="/cardapio" target="_blank"> ver cardapio
+    <div id="container">
+        
+        <div class="cont">
+            <h1>Bem Vindo(a) ao Sabor & Cia!</h1>
+            <p>✨ O Sabor & Cia Restaurante está de portas abertas para você! 
+            Um espaço pensado para transformar cada refeição em uma experiência especial. ☕</p>
+            <a href="/cardapio" target="_blank" class="hover-container"> Acesse nosso cardápio </a>
+        </div>
+
+
+            
+        <div class="cont">
+        <section class="secao-cardapio">
+            <iframe src="/cardapio">
+                <p>Seu navegador não suporta a visualização de PDFs. 
+                <a href="/cardapio" target="_blank" class="hover-container"> Acesse nosso cardápio </a>
+                </p>
+            </iframe>
+        </section>
+
+        </div>
+    
+    </div>
+
+       
 
     </a>
 </body>
