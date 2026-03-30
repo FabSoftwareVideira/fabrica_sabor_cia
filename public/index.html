@@ -23,7 +23,7 @@
         </ul>
     </nav>
 
-    <div id="container">
+    <main id="container">
         
         <section class="hero">
             <div class="hero-text">
@@ -41,30 +41,50 @@
 
 
         <section class="info-rapida">
-            <div class="info-card"> 
+            <div class="info-card">
                 <span class="info-icon">🕐</span>
+                <div>
+                    <strong>Horário</strong>
+                    <p>Seg–Sex, 07h–13h30</p>
+                </div>
             </div>
-            <strong>Horário</strong>
-            <p>Seg–Sex, 07h–21h</p>
+            <div class="info-card">
+                <span class="info-icon">📅</span>
+                <div>
+                    <strong>Cardápio</strong>
+                    <p>Atualizado todo mês</p>
+                </div>
+            </div>
         </section>
 
 
-            
-        <div class="cont">
-        <section class="secao-cardapio">
-            <iframe src="/cardapio">
-                <p>Seu navegador não suporta a visualização de PDFs. 
-                <a href="/cardapio" target="_blank" class="hover-container"> Acesse nosso cardápio </a>
-                </p>
-            </iframe>
+        <section class="secao-cardapio" id="cardapio">
+            <div class="cardapio-header">
+                <h2>Cardápio do Mês</h2>
+                <span class="mes-badge" id="mes-atual"></span>
+            </div>
+            <div class="pdf-wrapper">
+                <iframe id="pdf-cardapio" src="/cardapio" title="Cardápio em PDF">
+                    <p>Seu navegador não suporta a visualização de PDFs.
+                        <a href="/cardapio" target="_blank" class="btn-secundario">Abrir cardápio</a>
+                    </p>
+                </iframe>
+            </div>
         </section>
-
-        </div>
     
-    </div>
+    </main>
 
+    <footer>
+        <p>© 2026 Sabor & Cia · Fábrica de Software IFC Videira</p>
+        <a href="https://www.instagram.com/sabor_e_cia_1234/" target="_blank" class="insta-link">📸 Acesse nosso Instagram</a>
+    </footer>
        
+    <script>
+        const mes = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+        const agora = new Date();
+        document.getElementById('mes-atual').textContent =
+        `${mes[agora.getMonth()]} ${agora.getFullYear()}`;
+    </script>
 
-    </a>
 </body>
 </html>

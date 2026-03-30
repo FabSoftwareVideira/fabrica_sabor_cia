@@ -12,8 +12,6 @@ html{
 
 
 
-
-
 :root {
     --verde-escuro: #1e6b47;
     --verde-medio: #2c7f61;
@@ -40,104 +38,103 @@ body {
 }
 
 
-nav {
-    font-size: 16px;
+
+#navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background: linear-gradient(135deg, #2c7f61, #90c672);
+    background: linear-gradient(135deg, var(--verde-escuro), var(--verde-medio));
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    z-index: 10;
-    height: 10%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-
-}
-
-
-nav .logo img{
-    width: 60px;
-    display: flex;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 40px;
-
-}
-
-
-nav ul li a {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    font-weight: 500;
-}
-
-
-/* efeitos no hover da nav */
-
-.hover-nav {
-    position: relative;
-    }
-
-.hover-nav::before {
-    content: '' ;
-    position: absolute;
-    bottom: 0   ;
-    left: 50%;
-    transition: transform 0.1s ease-in-out;
-    transform: translateX(-50%) scale(0);
-    height: 1px;
-    width: 100%;
-    background-color: rgb(255, 255, 255) ;
-}
-
-.hover-nav:hover::before{
-    transform: translateX(-50%) scale(1);
-}
-
-#container{
-    padding-top: 10px;
-    display: flexbox;   
-    padding-bottom: 4%;
+    padding: 0 20px;
+    height: 70px;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.2);
 }
  
 
-.cont h1 {
-    font-size: 2.5em;   
+
+
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: white;
+    padding: 2px;
 }
 
-.cont a {
-    display: inline-block;
-    padding: 1% ;
-    margin-top: 2%;
-    background-color: #2c7f61;
+ 
+#menu {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+}
+
+ 
+#menu li a {
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    position: relative;
+    padding-bottom: 2px;
 }
 
-.cont{
-    background-color: #90c672;
-    border-radius: 10px;
-    padding: 3%;
-    margin: 5%;
-    border: 2px solid #d0ecc0;
-    width: 50%;
-    height: 80vh; /* Ocupa 80% da altura da tela do celular */
-}
 
-.secao-cardapio {
+.hover-nav::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background: white;
+    transition: width 0.25s ease;
+}
+ 
+.hover-nav:hover::after {
     width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.7);
-    border: 2px solid #90c672;
-    border-radius: 12px;
-    overflow: hidden; /* Garante que o PDF não saia das bordas arredondadas */
+}
+ 
+
+.emoji-float {
+    position: absolute;
+    font-size: 4rem;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    opacity: 0.6;
+    animation: flutuar 3s ease-in-out infinite;
+}
+ 
+@keyframes flutuar {
+    0%, 100% { transform: translateY(-50%) }
+    50% { transform: translateY(calc(-50% - 10px)) }
+}
+
+.circulo {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.15;
+}
+ 
+.c1 {
+    width: 180px;
+    height: 180px;
+    background: var(--verde-claro);
+    top: -40px;
+    right: -40px;
+}
+ 
+.c2 {
+    width: 100px;
+    height: 100px;
+    background: var(--verde-escuro);
+    bottom: 20px;
+    right: 60px;
 }
 
 iframe {
