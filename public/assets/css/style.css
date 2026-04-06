@@ -214,3 +214,28 @@ iframe {
     background: var(--verde-escuro);
     transform: translateY(-2px);
 }
+
+
+.info-rapida {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 28px 24px;
+    background: white;
+    border-bottom: 1px solid var(--verde-palido);
+}
+
+.info-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    background: var(--creme);
+    border-radius: var(--radius);
+    border: 1px solid var(--verde-palido);
+}
+
+.info-icon{
+    font-size: 1.6rem;
+    flex-shrink: 0;
+}
