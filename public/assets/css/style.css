@@ -239,3 +239,244 @@ iframe {
     font-size: 1.6rem;
     flex-shrink: 0;
 }
+
+
+.info-card strong {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--verde-escuro);
+    font-weight: 600;
+}   
+
+.info-card p {
+    font-size: 0.9rem;
+    color: var(--texto-suave);
+    margin: 0;
+}
+
+.secao-cardapio {
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+}
+
+
+.secao-cardapio p {
+    color: var(--texto-suave);
+    margin-bottom: 16px;
+    font-size: 0.95rem;
+}
+
+.cardapio-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.cardapio-header h2{
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--texto);
+}
+
+.mes-badge {
+    background: var(--verde-palido);
+    color: var(--verde-escuro);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 999px;
+    border: 1px solid var(--verde-claro);
+}
+
+
+footer {
+    background: var(--verde-escuro);
+    color: rgba(255,255,255,0.8);
+    text-align: center;
+    padding: 24px 20px;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+
+.insta-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+}
+ 
+.insta-link:hover {
+    opacity: 1;
+}
+
+
+/* pra tablet */
+
+@media (min-width: 600px) {
+    .info-rapida {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (min-width: 900px) {
+    #navbar {
+        padding: 0 48px;
+    }
+ 
+    .hero {
+        padding: 64px 48px;
+    }
+ 
+    .secao-cardapio {
+        padding: 48px;
+    }
+ 
+    .info-rapida {
+        padding: 32px 48px;
+    }
+ 
+    footer {
+        padding: 24px 48px;
+    }
+}
+
+
+/* estilização sobre nos */
+
+
+.sobre-intro {
+    padding: 32px 24px;
+    background: white;
+    border-bottom: 1px solid var(--verde-palido);
+}
+    
+.sobre-intro h2 {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--texto);
+    margin-bottom: 12px;
+}
+
+.sobre-intro p {
+    color: var(--texto-suave);
+    font-size: 0.95rem;
+    max-width: 640px;
+    line-height: 1.7;
+}
+
+.sobre-intro p + p {
+    margin-top: 12px;
+}
+
+.valores-section {
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.valores-section h2 {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--texto);
+    margin-bottom: 4px;
+}
+
+.valores-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.valor-icon{
+    font-size: 1.8rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.valor-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 18px;
+    background: var(--creme);
+    border-radius: var(--radius);
+    border: 1px solid var(--verde-palido);
+}
+
+.valor-card strong {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--verde-escuro);
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.valor-card p{
+    font-size: 0.88rem;
+    color: var(--texto-suave);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.equipe-section {
+    padding: 32px 24px;
+    background: white;
+    border-top: 1px solid var(--verde-palido);
+}
+ 
+.equipe-section h2 {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--texto);
+    margin-bottom: 8px;
+}
+ 
+.equipe-section > p {
+    color: var(--texto-suave);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+ 
+.equipe-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--verde-palido);
+    color: var(--verde-escuro);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 999px;
+    border: 1px solid var(--verde-claro);
+}
+ 
+@media (min-width: 600px) {
+    .valores-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+ 
+@media (min-width: 900px) {
+    .sobre-intro,
+    .valores-section,
+    .equipe-section {
+    padding: 48px;
+    }
+    .valores-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+

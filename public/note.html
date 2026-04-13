@@ -8,10 +8,222 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    <title>Sabor & Cia</title>
+    <title>Contato · Sabor & Cia</title>
+
+    <style>
+        .contato-cards {
+            padding: 32px 24px;
+            background: white;
+            border-bottom: 1px solid var(--verde-palido);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .contato-cards h2 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--texto);
+            margin-bottom: 4px;
+        }
+
+        .contato-cards > p {
+            color: var(--texto-suave);
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        .contato-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        .contato-card {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 18px;
+            background: var(--creme);
+            border-radius: var(--radius);
+            border: 1px solid var(--verde-palido);
+            text-decoration: none;
+            color: inherit;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .contato-card:hover {
+            border-color: var(--verde-claro);
+            box-shadow: var(--sombra);
+        }
+
+        .contato-card .info-icon {
+            font-size: 1.6rem;
+            flex-shrink: 0;
+        }
+
+        .contato-card strong {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--verde-escuro);
+            font-weight: 600;
+        }
+
+        .contato-card p {
+            font-size: 0.9rem;
+            color: var(--texto-suave);
+            margin: 0;
+        }
+
+        .mapa-section {
+            padding: 32px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .mapa-section h2 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--texto);
+        }
+
+        .mapa-section p {
+            color: var(--texto-suave);
+            font-size: 0.95rem;
+            margin-top: -8px;
+        }
+
+        .mapa-wrapper {
+            width: 100%;
+            height: 280px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--verde-palido);
+            box-shadow: var(--sombra);
+        }
+
+        .mapa-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .feedback-section {
+            padding: 32px 24px;
+            background: white;
+            border-top: 1px solid var(--verde-palido);
+        }
+
+        .feedback-section h2 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--texto);
+            margin-bottom: 8px;
+        }
+
+        .feedback-section p {
+            color: var(--texto-suave);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .form-grupo {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 560px;
+        }
+
+        .form-grupo input,
+        .form-grupo textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 12px;
+            border: 1px solid var(--verde-palido);
+            background: var(--creme);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--texto);
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            resize: none;
+        }
+
+        .form-grupo input:focus,
+        .form-grupo textarea:focus {
+            border-color: var(--verde-medio);
+            box-shadow: 0 0 0 3px rgba(44, 127, 97, 0.1);
+        }
+
+        .form-grupo input::placeholder,
+        .form-grupo textarea::placeholder {
+            color: #9ab5a5;
+        }
+
+        .form-grupo textarea {
+            height: 120px;
+        }
+
+        .btn-enviar {
+            align-self: flex-start;
+            background: var(--verde-medio);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 999px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+            box-shadow: 0 4px 12px rgba(44, 127, 97, 0.3);
+        }
+
+        .btn-enviar:hover {
+            background: var(--verde-escuro);
+            transform: translateY(-2px);
+        }
+
+        .sucesso-msg {
+            display: none;
+            align-items: center;
+            gap: 10px;
+            background: var(--verde-palido);
+            color: var(--verde-escuro);
+            border: 1px solid var(--verde-claro);
+            border-radius: 12px;
+            padding: 14px 18px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-top: 4px;
+        }
+
+        .sucesso-msg.visivel {
+            display: flex;
+        }
+
+        @media (min-width: 600px) {
+            .contato-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 900px) {
+            .contato-cards,
+            .mapa-section,
+            .feedback-section {
+                padding: 48px;
+            }
+
+            .mapa-wrapper {
+                height: 360px;
+            }
+        }
+    </style>
 </head>
 <body>
- 
+
     <nav id="navbar">
         <div class="logo">
             <a href="index.html"><img src="assets/img/logo.png" alt="Sabor & Cia"></a>
@@ -21,148 +233,369 @@
             <li><a href="contato.html" class="hover-nav">Contato</a></li>
         </ul>
     </nav>
-    
+
+    <main id="container">
+
+        <section class="hero">
+            <div class="hero-text">
+                <span class="badge">📬 Fale conosco</span>
+                <h1>Entre em <span class="destaque">Contato</span></h1>
+                <p>Tem uma dúvida, sugestão ou quer saber mais sobre o restaurante? A gente adoraria ouvir você!</p>
+            </div>
+            <div class="hero-deco">
+                <div class="circulo c1"></div>
+                <div class="circulo c2"></div>
+                <div class="emoji-float">💬</div>
+            </div>
+        </section>
+
+        <section class="contato-cards">
+            <h2>Informações</h2>
+            <p>Estamos disponíveis nos canais abaixo durante o horário de funcionamento.</p>
+            <div class="contato-grid">
+                <div class="contato-card">
+                    <span class="info-icon">🕐</span>
+                    <div>
+                        <strong>Horário de funcionamento</strong>
+                        <p>Segunda a Sexta, 07h às 21h</p>
+                    </div>
+                </div>
+                <div class="contato-card">
+                    <span class="info-icon">📍</span>
+                    <div>
+                        <strong>Localização</strong>
+                        <p>IFC Videira – Campus Videira, SC</p>
+                    </div>
+                </div>
+                <a href="https://www.instagram.com/sabor_e_cia_1234/" target="_blank" class="contato-card">
+                    <span class="info-icon">📸</span>
+                    <div>
+                        <strong>Instagram</strong>
+                        <p>@sabor_e_cia_1234</p>
+                    </div>
+                </a>
+                <div class="contato-card">
+                    <span class="info-icon">📋</span>
+                    <div>
+                        <strong>Cardápio</strong>
+                        <p>Atualizado todo mês na página inicial</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mapa-section">
+            <h2>Como chegar</h2>
+            <p>Estamos localizados dentro do campus do IFC Videira.</p>
+            <div class="mapa-wrapper">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.5!2d-51.1497!3d-27.0063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e16b0000000001%3A0x1!2sIFC+Videira!5e0!3m2!1spt-BR!2sbr!4v1"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Localização IFC Videira">
+                </iframe>
+            </div>
+        </section>
+
+        <section class="feedback-section">
+            <h2>Deixe sua sugestão</h2>
+            <p>Sua opinião é muito importante para melhorarmos cada vez mais!</p>
+            <div class="form-grupo" id="form-contato">
+                <input type="text" id="campo-nome" placeholder="Seu nome" maxlength="80">
+                <input type="email" id="campo-email" placeholder="Seu e-mail (opcional)" maxlength="120">
+                <textarea id="campo-mensagem" placeholder="Escreva sua sugestão ou dúvida..."></textarea>
+                <button class="btn-enviar" onclick="enviarFeedback()">Enviar mensagem ✉️</button>
+                <div class="sucesso-msg" id="sucesso">
+                    <span>✅</span> Mensagem recebida! Obrigado pelo seu contato.
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Sabor & Cia · Fábrica de Software IFC Videira</p>
+        <a href="https://www.instagram.com/sabor_e_cia_1234/" target="_blank" class="insta-link">📸 Acesse nosso Instagram</a>
+    </footer>
+
+    <script>
+        function enviarFeedback() {
+            const nome = document.getElementById('campo-nome').value.trim();
+            const mensagem = document.getElementById('campo-mensagem').value.trim();
+
+            if (!mensagem) {
+                document.getElementById('campo-mensagem').focus();
+                return;
+            }
+
+            // Aqui você pode integrar com um backend ou serviço de formulário
+            document.getElementById('campo-nome').value = '';
+            document.getElementById('campo-email').value = '';
+            document.getElementById('campo-mensagem').value = '';
+
+            const sucesso = document.getElementById('sucesso');
+            sucesso.classList.add('visivel');
+            setTimeout(() => sucesso.classList.remove('visivel'), 5000);
+        }
+    </script>
+
+</body>
+</html>
+
+--------------------------------------
+
+
+<!-- sobre nos -->
+
+  
+
+
  
- 
- 
+
+        <section class="equipe-section">
+            <h2>Fábrica de Software</h2>
+            <p>Este site foi desenvolvido por estudantes do IFC Videira como parte do projeto <strong>Fábrica de Software</strong> — iniciativa que conecta tecnologia e comunidade dentro do campus.</p>
+            <span class="equipe-badge">🎓 IFC Videira · Fábrica de Software</span>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Sabor & Cia · Fábrica de Software IFC Videira</p>
+        <a href="https://www.instagram.com/sabor_e_cia_1234/" target="_blank" class="insta-link">📸 Acesse nosso Instagram</a>
+    </footer>
+
 </body>
 </html>
 
 
----------
 
+
+
+
+
+
+
+------------------------------------------
+
+    <style>
 
  
-
-
  
 
- 
- 
-.info-card strong {
+    </style>
+/* ============================================
+   CONTATO.HTML — estilos adicionais
+   ============================================ */
+
+.contato-cards {
+    padding: 32px 24px;
+    background: white;
+    border-bottom: 1px solid var(--verde-palido);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contato-cards h2 {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--texto);
+    margin-bottom: 4px;
+}
+
+.contato-cards > p {
+    color: var(--texto-suave);
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+.contato-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.contato-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+    background: var(--creme);
+    border-radius: var(--radius);
+    border: 1px solid var(--verde-palido);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.contato-card:hover {
+    border-color: var(--verde-claro);
+    box-shadow: var(--sombra);
+}
+
+.contato-card strong {
     display: block;
     font-size: 0.85rem;
     color: var(--verde-escuro);
     font-weight: 600;
 }
- 
-.info-card p {
+
+.contato-card p {
     font-size: 0.9rem;
     color: var(--texto-suave);
     margin: 0;
 }
- 
-/* =====================
-   SEÇÃO CARDÁPIO
-======================== */
-.secao-cardapio {
+
+.mapa-section {
     padding: 32px 24px;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    gap: 16px;
 }
- 
-.cardapio-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-    gap: 10px;
-}
- 
-.cardapio-header h2 {
+
+.mapa-section h2 {
     font-family: var(--font-display);
     font-size: 1.8rem;
     color: var(--texto);
 }
- 
-.mes-badge {
-    background: var(--verde-palido);
-    color: var(--verde-escuro);
-    font-weight: 600;
-    font-size: 0.85rem;
-    padding: 6px 16px;
-    border-radius: 999px;
-    border: 1px solid var(--verde-claro);
+
+.mapa-section p {
+    color: var(--texto-suave);
+    font-size: 0.95rem;
+    margin-top: -8px;
 }
- 
- 
-/* =====================
-   FOOTER
-======================== */
-footer {
-    background: var(--verde-escuro);
-    color: rgba(255,255,255,0.8);
-    text-align: center;
-    padding: 24px 20px;
-    font-size: 0.9rem;
+
+.mapa-wrapper {
+    width: 100%;
+    height: 280px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--verde-palido);
+    box-shadow: var(--sombra);
+}
+
+.feedback-section {
+    padding: 32px 24px;
+    background: white;
+    border-top: 1px solid var(--verde-palido);
+}
+
+.feedback-section h2 {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--texto);
+    margin-bottom: 8px;
+}
+
+.feedback-section > p {
+    color: var(--texto-suave);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.form-grupo {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    align-items: center;
+    gap: 12px;
+    max-width: 560px;
 }
- 
-.insta-link {
+
+.form-grupo input,
+.form-grupo textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 1px solid var(--verde-palido);
+    background: var(--creme);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--texto);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    resize: none;
+}
+
+.form-grupo input:focus,
+.form-grupo textarea:focus {
+    border-color: var(--verde-medio);
+    box-shadow: 0 0 0 3px rgba(44, 127, 97, 0.1);
+}
+
+.form-grupo input::placeholder,
+.form-grupo textarea::placeholder {
+    color: #9ab5a5;
+}
+
+.form-grupo textarea {
+    height: 120px;
+}
+
+.btn-enviar {
+    align-self: flex-start;
+    background: var(--verde-medio);
     color: white;
-    text-decoration: none;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 999px;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
     font-weight: 600;
-    opacity: 0.9;
-    transition: opacity 0.2s;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 4px 12px rgba(44, 127, 97, 0.3);
 }
- 
-.insta-link:hover {
-    opacity: 1;
+
+.btn-enviar:hover {
+    background: var(--verde-escuro);
+    transform: translateY(-2px);
 }
- 
-/* =====================
-   TABLET (min 600px)
-======================== */
+
+.sucesso-msg {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    background: var(--verde-palido);
+    color: var(--verde-escuro);
+    border: 1px solid var(--verde-claro);
+    border-radius: 12px;
+    padding: 14px 18px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.sucesso-msg.visivel {
+    display: flex;
+}
+
+
+/* ============================================
+   RESPONSIVO — sobre e contato
+   ============================================ */
+
 @media (min-width: 600px) {
-    .info-rapida {
-        grid-template-columns: repeat(3, 1fr);
-    }
- 
-    #pdf-cardapio {
-        height: 650px;
-    }
- 
-    .pdf-wrapper {
-        min-height: 650px;
+    .valores-grid,
+    .contato-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
- 
-/* =====================
-   DESKTOP (min 900px)
-======================== */
+
 @media (min-width: 900px) {
-    #navbar {
-        padding: 0 48px;
-    }
- 
-    .hero {
-        padding: 64px 48px;
-    }
- 
-    .secao-cardapio {
+    .sobre-intro,
+    .valores-section,
+    .equipe-section,
+    .contato-cards,
+    .mapa-section,
+    .feedback-section {
         padding: 48px;
     }
- 
-    .info-rapida {
-        padding: 32px 48px;
+
+    .valores-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
- 
-    #pdf-cardapio {
-        height: 780px;
-    }
- 
-    .pdf-wrapper {
-        min-height: 780px;
-    }
- 
-    footer {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 24px 48px;
+
+    .mapa-wrapper {
+        height: 360px;
     }
 }
