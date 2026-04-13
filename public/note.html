@@ -11,215 +11,8 @@
     <title>Contato · Sabor & Cia</title>
 
     <style>
-        .contato-cards {
-            padding: 32px 24px;
-            background: white;
-            border-bottom: 1px solid var(--verde-palido);
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
+ 
 
-        .contato-cards h2 {
-            font-family: var(--font-display);
-            font-size: 1.8rem;
-            color: var(--texto);
-            margin-bottom: 4px;
-        }
-
-        .contato-cards > p {
-            color: var(--texto-suave);
-            font-size: 0.95rem;
-            margin-bottom: 8px;
-        }
-
-        .contato-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
-        }
-
-        .contato-card {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            padding: 16px 18px;
-            background: var(--creme);
-            border-radius: var(--radius);
-            border: 1px solid var(--verde-palido);
-            text-decoration: none;
-            color: inherit;
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
-
-        .contato-card:hover {
-            border-color: var(--verde-claro);
-            box-shadow: var(--sombra);
-        }
-
-        .contato-card .info-icon {
-            font-size: 1.6rem;
-            flex-shrink: 0;
-        }
-
-        .contato-card strong {
-            display: block;
-            font-size: 0.85rem;
-            color: var(--verde-escuro);
-            font-weight: 600;
-        }
-
-        .contato-card p {
-            font-size: 0.9rem;
-            color: var(--texto-suave);
-            margin: 0;
-        }
-
-        .mapa-section {
-            padding: 32px 24px;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .mapa-section h2 {
-            font-family: var(--font-display);
-            font-size: 1.8rem;
-            color: var(--texto);
-        }
-
-        .mapa-section p {
-            color: var(--texto-suave);
-            font-size: 0.95rem;
-            margin-top: -8px;
-        }
-
-        .mapa-wrapper {
-            width: 100%;
-            height: 280px;
-            border-radius: var(--radius);
-            overflow: hidden;
-            border: 1px solid var(--verde-palido);
-            box-shadow: var(--sombra);
-        }
-
-        .mapa-wrapper iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .feedback-section {
-            padding: 32px 24px;
-            background: white;
-            border-top: 1px solid var(--verde-palido);
-        }
-
-        .feedback-section h2 {
-            font-family: var(--font-display);
-            font-size: 1.8rem;
-            color: var(--texto);
-            margin-bottom: 8px;
-        }
-
-        .feedback-section p {
-            color: var(--texto-suave);
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-        }
-
-        .form-grupo {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            max-width: 560px;
-        }
-
-        .form-grupo input,
-        .form-grupo textarea {
-            width: 100%;
-            padding: 12px 16px;
-            border-radius: 12px;
-            border: 1px solid var(--verde-palido);
-            background: var(--creme);
-            font-family: var(--font-body);
-            font-size: 0.95rem;
-            color: var(--texto);
-            outline: none;
-            transition: border-color 0.2s, box-shadow 0.2s;
-            resize: none;
-        }
-
-        .form-grupo input:focus,
-        .form-grupo textarea:focus {
-            border-color: var(--verde-medio);
-            box-shadow: 0 0 0 3px rgba(44, 127, 97, 0.1);
-        }
-
-        .form-grupo input::placeholder,
-        .form-grupo textarea::placeholder {
-            color: #9ab5a5;
-        }
-
-        .form-grupo textarea {
-            height: 120px;
-        }
-
-        .btn-enviar {
-            align-self: flex-start;
-            background: var(--verde-medio);
-            color: white;
-            border: none;
-            padding: 12px 28px;
-            border-radius: 999px;
-            font-family: var(--font-body);
-            font-size: 0.95rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s, transform 0.2s;
-            box-shadow: 0 4px 12px rgba(44, 127, 97, 0.3);
-        }
-
-        .btn-enviar:hover {
-            background: var(--verde-escuro);
-            transform: translateY(-2px);
-        }
-
-        .sucesso-msg {
-            display: none;
-            align-items: center;
-            gap: 10px;
-            background: var(--verde-palido);
-            color: var(--verde-escuro);
-            border: 1px solid var(--verde-claro);
-            border-radius: 12px;
-            padding: 14px 18px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            margin-top: 4px;
-        }
-
-        .sucesso-msg.visivel {
-            display: flex;
-        }
-
-        @media (min-width: 600px) {
-            .contato-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (min-width: 900px) {
-            .contato-cards,
-            .mapa-section,
-            .feedback-section {
-                padding: 48px;
-            }
-
-            .mapa-wrapper {
-                height: 360px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -298,47 +91,7 @@
             </div>
         </section>
 
-        <section class="feedback-section">
-            <h2>Deixe sua sugestão</h2>
-            <p>Sua opinião é muito importante para melhorarmos cada vez mais!</p>
-            <div class="form-grupo" id="form-contato">
-                <input type="text" id="campo-nome" placeholder="Seu nome" maxlength="80">
-                <input type="email" id="campo-email" placeholder="Seu e-mail (opcional)" maxlength="120">
-                <textarea id="campo-mensagem" placeholder="Escreva sua sugestão ou dúvida..."></textarea>
-                <button class="btn-enviar" onclick="enviarFeedback()">Enviar mensagem ✉️</button>
-                <div class="sucesso-msg" id="sucesso">
-                    <span>✅</span> Mensagem recebida! Obrigado pelo seu contato.
-                </div>
-            </div>
-        </section>
 
-    </main>
-
-    <footer>
-        <p>© 2026 Sabor & Cia · Fábrica de Software IFC Videira</p>
-        <a href="https://www.instagram.com/sabor_e_cia_1234/" target="_blank" class="insta-link">📸 Acesse nosso Instagram</a>
-    </footer>
-
-    <script>
-        function enviarFeedback() {
-            const nome = document.getElementById('campo-nome').value.trim();
-            const mensagem = document.getElementById('campo-mensagem').value.trim();
-
-            if (!mensagem) {
-                document.getElementById('campo-mensagem').focus();
-                return;
-            }
-
-            // Aqui você pode integrar com um backend ou serviço de formulário
-            document.getElementById('campo-nome').value = '';
-            document.getElementById('campo-email').value = '';
-            document.getElementById('campo-mensagem').value = '';
-
-            const sucesso = document.getElementById('sucesso');
-            sucesso.classList.add('visivel');
-            setTimeout(() => sucesso.classList.remove('visivel'), 5000);
-        }
-    </script>
 
 </body>
 </html>
@@ -378,197 +131,100 @@
 
 
 ------------------------------------------
-
     <style>
-
+    .form-grupo {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 560px;
+        }
  
+        .form-grupo input,
+        .form-grupo textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 12px;
+            border: 1px solid var(--verde-palido);
+            background: var(--creme);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--texto);
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            resize: none;
+        }
  
-
+        .form-grupo input:focus,
+        .form-grupo textarea:focus {
+            border-color: var(--verde-medio);
+            box-shadow: 0 0 0 3px rgba(44, 127, 97, 0.1);
+        }
+ 
+        .form-grupo input::placeholder,
+        .form-grupo textarea::placeholder {
+            color: #9ab5a5;
+        }
+ 
+        .form-grupo textarea {
+            height: 120px;
+        }
+ 
+        .btn-enviar {
+            align-self: flex-start;
+            background: var(--verde-medio);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 999px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+            box-shadow: 0 4px 12px rgba(44, 127, 97, 0.3);
+        }
+ 
+        .btn-enviar:hover {
+            background: var(--verde-escuro);
+            transform: translateY(-2px);
+        }
+ 
+        .sucesso-msg {
+            display: none;
+            align-items: center;
+            gap: 10px;
+            background: var(--verde-palido);
+            color: var(--verde-escuro);
+            border: 1px solid var(--verde-claro);
+            border-radius: 12px;
+            padding: 14px 18px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-top: 4px;
+        }
+ 
+        .sucesso-msg.visivel {
+            display: flex;
+        }
+ 
+        @media (min-width: 600px) {
+            .contato-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+ 
+        @media (min-width: 900px) {
+            .contato-cards,
+            .mapa-section,
+            .feedback-section {
+                padding: 48px;
+            }
+ 
+            .mapa-wrapper {
+                height: 360px;
+            }
+        }
     </style>
-/* ============================================
-   CONTATO.HTML — estilos adicionais
-   ============================================ */
-
-.contato-cards {
-    padding: 32px 24px;
-    background: white;
-    border-bottom: 1px solid var(--verde-palido);
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.contato-cards h2 {
-    font-family: var(--font-display);
-    font-size: 1.8rem;
-    color: var(--texto);
-    margin-bottom: 4px;
-}
-
-.contato-cards > p {
-    color: var(--texto-suave);
-    font-size: 0.95rem;
-    margin-bottom: 8px;
-}
-
-.contato-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
-}
-
-.contato-card {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 16px 18px;
-    background: var(--creme);
-    border-radius: var(--radius);
-    border: 1px solid var(--verde-palido);
-    text-decoration: none;
-    color: inherit;
-    transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-.contato-card:hover {
-    border-color: var(--verde-claro);
-    box-shadow: var(--sombra);
-}
-
-.contato-card strong {
-    display: block;
-    font-size: 0.85rem;
-    color: var(--verde-escuro);
-    font-weight: 600;
-}
-
-.contato-card p {
-    font-size: 0.9rem;
-    color: var(--texto-suave);
-    margin: 0;
-}
-
-.mapa-section {
-    padding: 32px 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.mapa-section h2 {
-    font-family: var(--font-display);
-    font-size: 1.8rem;
-    color: var(--texto);
-}
-
-.mapa-section p {
-    color: var(--texto-suave);
-    font-size: 0.95rem;
-    margin-top: -8px;
-}
-
-.mapa-wrapper {
-    width: 100%;
-    height: 280px;
-    border-radius: var(--radius);
-    overflow: hidden;
-    border: 1px solid var(--verde-palido);
-    box-shadow: var(--sombra);
-}
-
-.feedback-section {
-    padding: 32px 24px;
-    background: white;
-    border-top: 1px solid var(--verde-palido);
-}
-
-.feedback-section h2 {
-    font-family: var(--font-display);
-    font-size: 1.8rem;
-    color: var(--texto);
-    margin-bottom: 8px;
-}
-
-.feedback-section > p {
-    color: var(--texto-suave);
-    font-size: 0.95rem;
-    margin-bottom: 20px;
-}
-
-.form-grupo {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    max-width: 560px;
-}
-
-.form-grupo input,
-.form-grupo textarea {
-    width: 100%;
-    padding: 12px 16px;
-    border-radius: 12px;
-    border: 1px solid var(--verde-palido);
-    background: var(--creme);
-    font-family: var(--font-body);
-    font-size: 0.95rem;
-    color: var(--texto);
-    outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    resize: none;
-}
-
-.form-grupo input:focus,
-.form-grupo textarea:focus {
-    border-color: var(--verde-medio);
-    box-shadow: 0 0 0 3px rgba(44, 127, 97, 0.1);
-}
-
-.form-grupo input::placeholder,
-.form-grupo textarea::placeholder {
-    color: #9ab5a5;
-}
-
-.form-grupo textarea {
-    height: 120px;
-}
-
-.btn-enviar {
-    align-self: flex-start;
-    background: var(--verde-medio);
-    color: white;
-    border: none;
-    padding: 12px 28px;
-    border-radius: 999px;
-    font-family: var(--font-body);
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.2s;
-    box-shadow: 0 4px 12px rgba(44, 127, 97, 0.3);
-}
-
-.btn-enviar:hover {
-    background: var(--verde-escuro);
-    transform: translateY(-2px);
-}
-
-.sucesso-msg {
-    display: none;
-    align-items: center;
-    gap: 10px;
-    background: var(--verde-palido);
-    color: var(--verde-escuro);
-    border: 1px solid var(--verde-claro);
-    border-radius: 12px;
-    padding: 14px 18px;
-    font-size: 0.9rem;
-    font-weight: 500;
-}
-
-.sucesso-msg.visivel {
-    display: flex;
-}
-
 
 /* ============================================
    RESPONSIVO — sobre e contato
