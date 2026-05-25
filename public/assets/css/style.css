@@ -455,23 +455,6 @@ footer {
     border-radius: 999px;
     border: 1px solid var(--verde-claro);
 }
- 
-@media (min-width: 600px) {
-    .valores-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
- 
-@media (min-width: 900px) {
-    .sobre-intro,
-    .valores-section,
-    .equipe-section {
-    padding: 48px;
-    }
-    .valores-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
 
 
 /* estilizacao contato */
@@ -643,9 +626,8 @@ footer {
     transform: translateY(-2px);
 }
 
-/* BALÃO DE MENSAGEM (ESTILO BADGE) */
 .sucesso-msg {
-    display: none;             /* Escondido por padrão para não ocupar espaço */
+    display: none;    
     align-items: center;
     gap: 8px;
     background: var(--verde-palido);
@@ -658,13 +640,11 @@ footer {
     margin-top: 15px;
     width: fit-content;
     
-    /* Efeitos de transição */
     opacity: 0;
     transform: translateY(10px);
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Quando o JS adiciona a classe .visivel */
 .sucesso-msg.visivel {
     display: inline-flex;      /* Ativa a estrutura flex */
     opacity: 1;
