@@ -3,14 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="manifest" href="/manifest.json">
+        <meta name="theme-color" content="#1e6b47">
+        <script>
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('/service-worker.js');
+            }
+        </script>
+
     <link rel="stylesheet" href="/assets/css/style.css">
+        
     <link rel="icon" type="image/x-icon" href="assets/img/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    <title>Contato · Sabor & Cia</title>
+    <title>Sabor & Cia</title>
 
-    
 </head>
 <body>
 
@@ -48,13 +57,7 @@
                         <p>(49) 92001-6108</p>
                     </div>
                 </a>
-                <div class="contato-card">
-                    <span class="info-icon">🕐</span>
-                    <div>
-                        <strong>Horário de funcionamento</strong>
-                        <p>Segunda a Sexta, 07h às 21h</p>
-                    </div>
-                </div>
+               
                 <a href="https://www.instagram.com/sabor_e_cia_1234/" target="_blank" class="contato-card">
                     <span class="info-icon">📸</span>
                     <div>
@@ -62,13 +65,6 @@
                         <p>@sabor_e_cia_1234</p>
                     </div>
                 </a>
-                <div class="contato-card">
-                    <span class="info-icon">📋</span>
-                    <div>
-                        <strong>Cardápio</strong>
-                        <p>Atualizado todo mês na página inicial</p>
-                    </div>
-                </div>
             </div>
         </section>
 
