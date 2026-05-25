@@ -3,13 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="manifest" href="/manifest.json">
+        <meta name="theme-color" content="#1e6b47">
+        <script>
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('/service-worker.js');
+            }
+        </script>
+
     <link rel="stylesheet" href="/assets/css/style.css">
+        
     <link rel="icon" type="image/x-icon" href="assets/img/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    <title>Sobre Nós · Sabor & Cia</title>
-    
+    <title>Sabor & Cia</title>
+
 </head>
 <body>
      <nav id="navbar">
@@ -90,7 +100,6 @@
         </section>
 
          <section class="equipe-section">
-            <h2>Fábrica de Software</h2>
             <p>Este site foi desenvolvido por estudantes do IFC Videira como parte do projeto <strong>Fábrica de Software</strong> — iniciativa que conecta tecnologia e comunidade dentro do campus.</p>
             <span class="equipe-badge">🎓 IFC Videira · Fábrica de Software</span>
         </section>
