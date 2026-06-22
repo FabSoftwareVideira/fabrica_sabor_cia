@@ -94,7 +94,7 @@
                 ❌ Ocorreu um erro. Tente novamente mais tarde.
             </div>
             
-            <form id="form-contato" action="https://formspree.io/f/myklydpq" method="POST" class="form-grupo">
+            <form id="form-contato" action="https://formspree.io/f/mbdvjqya" method="POST" class="form-grupo">
                 <input type="text" name="nome" id="campo-nome" placeholder="Seu nome" maxlength="80" required data-fs-field>
             
                 <input type="email" name="email" id="campo-email" placeholder="Seu e-mail (opcional)" maxlength="120" data-fs-field>
@@ -110,9 +110,8 @@
         window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
         formspree('initForm', { 
             formElement: '#form-contato', 
-            formId: 'myklydpq',
+            formId: 'mbdvjqya',
             onSuccess: function() {
-                // Mostra a div de sucesso e esconde o formulário
                 document.getElementById('form-contato').style.display = 'none';
                 document.getElementById('sucesso').style.display = 'block';
             }
