@@ -13,8 +13,8 @@ services:
     expose:
       - ${PORT}
     networks:
-      - fabrica-netwotk
+      - fabrica-network
 
 networks:
-  fabrica-netwotk:
+  fabrica-network:
     external: true
