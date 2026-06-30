@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 3000;
-const BASE_PATH = process.env.BASE_PATH || '/';
+const BASE_PATH = process.env.BASE_PATH || '/restaurante';
 
 const DRIVE_API_KEY = process.env.DRIVE_API_KEY;
 const DRIVE_FOLDER_ID = process.env.DRIVE_FOLDER_ID;
