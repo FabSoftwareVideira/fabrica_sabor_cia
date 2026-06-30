@@ -17,6 +17,8 @@ const meses = {
 };
 
 app.use(BASE_PATH, express.static(path.join(__dirname, 'public')));
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
 async function buscarCardapio(ano, numeroMes) {
     const nomeMes = Object.keys(meses).find(k => meses[k] === numeroMes);
