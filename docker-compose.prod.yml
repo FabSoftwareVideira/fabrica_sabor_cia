@@ -1,5 +1,5 @@
 services:
-  app:
+  fabrica-sabor_cia:
     container_name: fabrica-sabor_cia
     build:
       context: .
