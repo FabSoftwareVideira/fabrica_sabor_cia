@@ -11,6 +11,7 @@ services:
     environment:
       NODE_ENV: production
       PORT: 3000
+      TRUST_PROXY: "true"
       BASE_PATH: /restaurante
     expose:
       - "3000"
