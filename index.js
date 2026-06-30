@@ -1,5 +1,6 @@
 const express = require('express');
 const fetch = require('node-fetch');
+const path = require('path');
 require('dotenv').config();
 
 const app = express();
@@ -111,20 +112,20 @@ app.get('/cardapio/:ano/:mes', async (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.get('/contato', (req, res) => {
-    res.sendFile(__dirname + '/public/contato.html');
+    res.sendFile(path.join(__dirname, 'public', 'contato.html'));
 });
 
 app.get('/sobre', (req, res) => {
-    res.sendFile(__dirname + '/public/sobre.html');
+    res.sendFile(path.join(__dirname, 'public', 'sobre.html'));
 });
 
-app.get('/sofia', (req, res) => {
-    res.send('Olá, Sofia!');
-});
+// app.get('/sofia', (req, res) => {
+//     res.send('Olá, Sofia!');
+// });
 
 app.use((req, res) => {
     console.log('Rota não encontrada:', req.url);

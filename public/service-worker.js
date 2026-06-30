@@ -1,7 +1,7 @@
 self.addEventListener('install', e => {
     e.waitUntil(
-        caches.open('sabor-cia-v1').then(cache => {
-            return cache.addAll(['/', '/sobre', '/contato']);
+        caches.open('sabor-cia-v2').then(cache => {
+            return cache.addAll(['./', 'sobre', 'contato']);
         })
     );
 });

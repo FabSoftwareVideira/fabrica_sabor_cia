@@ -4,14 +4,14 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: sabor-cia:latest
+    image: fabrica-sabor_cia:latest
     restart: always
     env_file:
       - .env
     environment:
       NODE_ENV: production
     expose:
-      - "3000"
+      - ${PORT}
     networks:
       - fabrica-netwotk
 
