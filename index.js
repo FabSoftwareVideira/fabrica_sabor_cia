@@ -112,12 +112,14 @@ app.get(`${BASE_PATH}/cardapio/:ano/:mes`, async (req, res) => {
     }
 });
 
-app.get(`${BASE_PATH}/`, (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+app.get('/', (req, res) => {
+    res.render('index', { basePath: BASE_PATH });
+    // res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.get(`${BASE_PATH}/contato`, (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'contato.html'));
+app.get('/contato', (req, res) => {
+    res.render('contato', { basePath: BASE_PATH });
+    // res.sendFile(path.join(__dirname, 'public', 'contato.html'));
 });
 
 app.get(`${BASE_PATH}/sobre`, (req, res) => {
