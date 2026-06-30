@@ -5,8 +5,6 @@ require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 3000;
-const BASE_PATH = '/';
-
 const DRIVE_API_KEY = process.env.DRIVE_API_KEY;
 const DRIVE_FOLDER_ID = process.env.DRIVE_FOLDER_ID;
 
@@ -16,7 +14,7 @@ const meses = {
     "9-setembro": 9, "10-outubro": 10, "11-novembro": 11, "12-dezembro": 12
 };
 
-app.use(BASE_PATH, express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 async function buscarCardapio(ano, numeroMes) {
     const nomeMes = Object.keys(meses).find(k => meses[k] === numeroMes);
@@ -69,7 +67,7 @@ async function buscarCardapio(ano, numeroMes) {
     return dataArquivo.files[0].id;
 }
 
-app.get(`${BASE_PATH}/cardapio`, async (req, res) => {
+app.get('/cardapio', async (req, res) => {
     const agora = new Date();
     const ano = agora.getFullYear();
     const numeroMes = agora.getMonth() + 1;
@@ -89,7 +87,7 @@ app.get(`${BASE_PATH}/cardapio`, async (req, res) => {
     }
 });
 
-app.get(`${BASE_PATH}/cardapio/:ano/:mes`, async (req, res) => {
+app.get('/cardapio/:ano/:mes', async (req, res) => {
     const { ano, mes } = req.params;
     const numeroMes = meses[mes.toLowerCase()];
 
@@ -112,15 +110,15 @@ app.get(`${BASE_PATH}/cardapio/:ano/:mes`, async (req, res) => {
     }
 });
 
-app.get(`${BASE_PATH}/`, (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.get(`${BASE_PATH}/contato`, (req, res) => {
+app.get('/contato', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'contato.html'));
 });
 
-app.get(`${BASE_PATH}/sobre`, (req, res) => {
+app.get('/sobre', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'sobre.html'));
 });
 
