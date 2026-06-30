@@ -1,0 +1,20 @@
+services:
+  app:
+    container_name: fabrica-sabor_cia
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: sabor-cia:latest
+    restart: always
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+    expose:
+      - "3000"
+    networks:
+      - fabrica-netwotk
+
+networks:
+  fabrica-netwotk:
+    external: true

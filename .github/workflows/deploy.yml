@@ -1,0 +1,54 @@
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "v*.*.*"
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy para Produção na VPS da BRDrive
+    runs-on: self-hosted
+
+    steps:
+      - name: 📂 Checkout do Código
+        uses: actions/checkout@v4
+
+      - name: 📄 Criar arquivo .env
+        run: |
+          cat > .env <<EOF
+          DRIVE_API_KEY=${{ secrets.DRIVE_API_KEY }}
+          DRIVE_FOLDER_ID=${{ secrets.DRIVE_FOLDER_ID }}
+          EOF
+
+      - name: 🐳 Validar Docker
+        run: |
+          docker --version
+          if docker compose version >/dev/null 2>&1; then
+            echo "DOCKER_COMPOSE_CMD=docker compose" >> "$GITHUB_ENV"
+          elif command -v docker-compose >/dev/null 2>&1; then
+            echo "DOCKER_COMPOSE_CMD=docker-compose" >> "$GITHUB_ENV"
+          else
+            echo "Docker Compose não encontrado no runner."
+            exit 1
+          fi
+
+      - name: 🧹 Derrubar stack antiga
+        run: |
+          $DOCKER_COMPOSE_CMD -f docker-compose.prod.yml down --remove-orphans || true
+
+      - name: 🌐 Garantir rede externa de produção
+        run: |
+          docker network inspect fabrica-netwotk >/dev/null 2>&1 || docker network create fabrica-netwotk
+
+      - name: 🚀 Build e subir stack
+        run: |
+          $DOCKER_COMPOSE_CMD -f docker-compose.prod.yml up -d --build --remove-orphans
+
+      - name: ✅ Verificar container
+        run: |
+          docker ps --filter "name=fabrica-sabor_cia" --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+
+      - name: ♻️ Limpeza de imagens não utilizadas
+        run: docker image prune -f
