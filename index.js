@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 require('dotenv').config();
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const DRIVE_API_KEY = process.env.DRIVE_API_KEY;
 const DRIVE_FOLDER_ID = process.env.DRIVE_FOLDER_ID;
@@ -11,7 +11,7 @@ const DRIVE_FOLDER_ID = process.env.DRIVE_FOLDER_ID;
 const meses = {
     "1-janeiro": 1, "2-fevereiro": 2, "3-marco": 3, "4-abril": 4,
     "5-maio": 5, "6-junho": 6, "7-julho": 7, "8-agosto": 8,
-    "9-setembro": 9, "10-outubro": 10, "11-novembro": 11, "12-dezembro" : 12
+    "9-setembro": 9, "10-outubro": 10, "11-novembro": 11, "12-dezembro": 12
 };
 
 app.use(express.static('public'));
