@@ -34,6 +34,7 @@ jobs:
       - name: ✅ Verificar container
         run: |
           docker ps --filter "name=fabrica-sabor_cia" --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+          docker ps --filter "name=fabrica-sabor_nginx" --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
 
       - name: ♻️ Limpeza de imagens não utilizadas
         run: docker image prune -f
