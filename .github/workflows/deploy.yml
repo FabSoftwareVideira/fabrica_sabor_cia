@@ -18,6 +18,7 @@ jobs:
       - name: 📄 Criar arquivo .env
         run: |
           cat > .env <<EOF
+          BASE_PATH=${{ secrets.BASE_PATH || '/restaurante' }}
           DRIVE_API_KEY=${{ secrets.DRIVE_API_KEY || 'your_default_api_key' }}
           DRIVE_FOLDER_ID=${{ secrets.DRIVE_FOLDER_ID || 'your_default_folder_id' }}
           PORT=${{ secrets.PORT || 3000 }}
