@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 3000;
-const BASE_PATH = process.env.BASE_PATH || '/';
+const BASE_PATH = '/';
 
 const DRIVE_API_KEY = process.env.DRIVE_API_KEY;
 const DRIVE_FOLDER_ID = process.env.DRIVE_FOLDER_ID;
@@ -112,7 +112,7 @@ app.get(`${BASE_PATH}/cardapio/:ano/:mes`, async (req, res) => {
     }
 });
 
-app.get('/', (req, res) => {
+app.get(`${BASE_PATH}/`, (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
@@ -128,7 +128,6 @@ app.get(`${BASE_PATH}/sobre`, (req, res) => {
 //     res.send('Olá, Sofia!');
 // });
 
-// 404
 app.use((req, res) => {
     console.log('Rota não encontrada:', req.url);
     res.status(404).send('404');
